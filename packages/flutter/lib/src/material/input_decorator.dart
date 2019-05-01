@@ -346,12 +346,16 @@ class _HelperErrorState extends State<_HelperError> with SingleTickerProviderSta
             begin: const Offset(0.0, -0.25),
             end: const Offset(0.0, 0.0),
           ).evaluate(_controller.view),
-          child: Text(
-            widget.errorText,
-            style: widget.errorStyle,
-            textAlign: widget.textAlign,
-            overflow: TextOverflow.ellipsis,
-            maxLines: widget.errorMaxLines,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Text(
+              widget.errorText,
+              style: widget.errorStyle,
+              textAlign: widget.textAlign,
+              overflow: TextOverflow.ellipsis,
+              maxLines: widget.errorMaxLines,
+            )
           ),
         ),
       ),
